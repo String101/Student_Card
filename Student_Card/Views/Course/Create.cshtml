@@ -1,0 +1,76 @@
+﻿@model Student_Card.Models.Course
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="w-100 card border-0">
+    <div class="card-header bg-info bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="text-white py-2">Add Course</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-body border-4">
+    
+    <form method="post" class="row">
+        <div class="p-3">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-floating py-2 col-12">
+                <label asp-for="CourseName" class="ms-2">Course Name</label>
+                <input asp-for="CourseName" class="form-control border shadow" />
+                <span asp-validation-for="CourseName" class="text-danger"></span>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <label asp-for="CourseCode" class="ms-2">Course Code</label>
+                <input asp-for="CourseCode" class="form-control border shadow" />
+                <span asp-validation-for="CourseCode" class="text-danger"></span>
+            </div>
+
+            <div class="form-floating py-2 col-12">
+                <label asp-for="CourseDescription" class="ms-2">Course Description</label>
+                <textarea asp-for="CourseDescription" class="form-control border shadow" style="height: 200px" rows="4"></textarea>
+                <span asp-validation-for="CourseDescription" class="text-danger"></span>
+            </div>
+
+            
+        </div>
+       
+        <div class="row pt-2">
+            <div class="col-6 col-md-6">
+                <button type="submit" class="btn btn-success w-100">
+                    <i class="bi bi-check-circle"> Create</i>
+                </button>
+            </div>
+            <div class="col-6 col-md-6">
+                <a asp-controller="Course" asp-action="Index" class="btn btn-secondary w-100">
+                    <i class="bi bi-x-circle"> Cancel</i>
+                </a>
+            </div>
+        </div>
+        
+    </form>
+    
+</div>
+@* <div class="container mt-5">
+   
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+           
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-6 text-center">
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div> *@
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

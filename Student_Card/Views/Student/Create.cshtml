@@ -1,0 +1,71 @@
+﻿@model StudentVM
+
+<div class="w-100 card border-0">
+    <div class="card-header bg-info bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="text-white py-2">Create Student</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-body border-4">
+    <form method="post" class="row">
+        <div class="p-3">
+             <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-floating py-2 col-12">
+                <select asp-for="@Model.Student.CourseId" asp-items="@Model.CourseList" class="form-select border shadow">
+                    <option disabled selected>--Select Course--</option>
+                </select>
+                <label asp-for="Student.CourseId" class="ms-2"></label>
+
+            </div>
+            <div class="form-floating py-2 col-12">
+                <select asp-for="@Model.Student.Title" class="form-select">
+
+                    <option value="Mr">Mr</option>
+                    <option value="Ms">Ms</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Dr">Dr</option>
+                    <option value="Prof">Prof</option>
+                    <option value="Rev">Rev</option>
+                    <option disabled selected>--Select Title--</option>
+
+                </select>
+                <label asp-for="Student.Title" class="ms-2"></label>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="@Model.Student.Initials" class="form-control border shadow" />
+                <label asp-for="Student.Initials" class=""></label>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="@Model.Student.Surname" class="form-control border shadow" />
+                <label asp-for="Student.Surname" class=""></label>
+            </div>
+            <div class="form-floating py-2 col-12">
+                <input asp-for="@Model.Student.Student_Number" class="form-control border shadow" />
+                <label asp-for="Student.Student_Number" class=""></label>
+
+            </div>
+            <div class="row pt-2">
+                <div class="col-6 col-md-6">
+                    <button type="submit" class="btn btn-success w-100">
+                        <i class="bi bi-check-circle"> Create</i>
+                    </button>
+                </div>
+                <div class="col-6 col-md-6">
+                    <a asp-controller="Student" asp-action="Index" class="btn btn-secondary w-100">
+                        <i class="bi bi-x-circle"> Cancel</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

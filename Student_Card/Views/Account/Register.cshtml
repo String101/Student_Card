@@ -1,0 +1,77 @@
+﻿@model RegisterViewM
+
+<div class="container pt-5">
+    <div class="card shadow border ">
+        <div class="card-header bg-info bg-gradient ml-0 py-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="py-2 text-white">Register</h2>
+                </div>
+            </div>
+        </div>
+        <div class="card-body p-4">
+            <div class="row pt-3">
+                <div class="col-md-12">
+                    <form class="row" method="post">
+
+                        <div class="form-floating mb-3 col-md-6">
+                            <select asp-for="@Model.RegisterVM.CourseNumber" asp-items="@Model.CourseList" class="form-select border shadow">
+                                <option disabled selected>--Select Course--</option>
+                            </select>
+                            <label class="ms-2 text-muted">Enrollment</label>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <select class="form-select" asp-for="@Model.RegisterVM.Title">
+
+                                <option value="Mr">Mr</option>
+                                <option value="Ms">Ms</option>
+                                <option value="Mrs">Mrs</option>
+                                <option value="Dr">Dr</option>
+                                <option value="Prof">Prof</option>
+                                <option value="Rev">Rev</option>
+                                <option disabled selected>--Select Title--</option>
+
+                            </select>
+                            <label class="ms-2 text-muted">Title</label>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.RegisterVM.Initials" class="form-control" />
+                            <label class="ms-2 text-muted">Initials</label>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.RegisterVM.Surname" class="form-control" />
+                            <label class="ms-2 text-muted">Surname</label>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.RegisterVM.Email" class="form-control" aria-required="true" />
+                            <label class="ms-2 text-muted">Email</label>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.RegisterVM.StudentNumber" class="form-control" />
+                            <label class="ms-2 text-muted">Student Number</label>
+                        </div>
+
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.RegisterVM.Password" class="form-control" />
+                            <label class="ms-2 text-muted">Password</label>
+                        </div>
+                        <div class="form-floating mb-3 col-md-6">
+                            <input asp-for="@Model.RegisterVM.ConfirmPassword" class="form-control" />
+                            <label class="ms-2 text-muted">Confirm Password</label>
+                        </div>
+
+                        <div class="form-floating mb-3 col-md-6">
+                            <select asp-for="Role" asp-items="@Model.Roles" class="form-select">
+                                <option disabled selected>-Select Role-</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="w-100 btn btn-lg btn-outline-info">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

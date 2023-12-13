@@ -1,0 +1,51 @@
+﻿@model StudentStudentCardVM
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="w-100 card border-0">
+    <div class="card-header bg-info bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="text-white py-2">Create Card</h1>
+            </div>
+        </div>
+    </div>
+    <div class="card-body border-4">
+        <form method="post" class="row" enctype="multipart/form-data">
+
+            <div class="mb-3">
+                <div class="form-floating py-2">
+                    <input asp-for="@Model.StudentCard.StudentID" hidden class="form-control border shadow" />
+                    <label asp-for="StudentCard.StudentID" hidden class="ms-2">Student Number</label>
+                    <span asp-validation-for="StudentCard.StudentID" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2">
+                    <input asp-for="@Model.StudentCard.ImageUrl" hidden class="form-control border shadow" />
+                    <input asp-for="@Model.StudentCard.Image" class="form-control border shadow" />
+                    <label asp-for="StudentCard.ImageUrl" class="ms-2">Upload Image</label>
+                    <span asp-validation-for="StudentCard.ImageUrl" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2">
+                    <input asp-for="@Model.StudentCard.Year" hidden class="form-control border shadow" />
+                    <label asp-for="StudentCard.ImageUrl" hidden class="ms-2">Current Year</label>
+                    <span asp-validation-for="StudentCard.ImageUrl" class="text-danger"></span>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-6 col-md-6">
+                        <button type="submit" asp-route-user="@UserManager.GetUserName(User)" class="btn btn-success w-100">
+                            <i class="bi bi-check-circle"> Create</i>
+                        </button>
+                    </div>
+                    <div class="col-6 col-md-6">
+                        <a asp-controller="StudentCard" asp-action="Index" class="btn btn-secondary w-100">
+                            <i class="bi bi-x-circle"> Cancel</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
