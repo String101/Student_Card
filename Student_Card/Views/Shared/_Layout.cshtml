@@ -1,4 +1,5 @@
-﻿@inject SignInManager<ApplicationUser> SignInManager
+﻿@using System.Security.Claims
+@inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
 <!DOCTYPE html>
@@ -30,7 +31,10 @@
                         </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
+                            var claimsIdentity = (ClaimsIdentity)User.Identity;
+                            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
 
+                          
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Content Management

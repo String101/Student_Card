@@ -16,5 +16,9 @@ namespace Student_Card.Repositories
         {
             _context.Courses.Update(entity);
         }
+        public void Save()
+        {
+           _context.SaveChanges();
+        }
     }
 }

@@ -90,7 +90,16 @@ namespace Student_Card.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewM registerViewM)
         {
-            if (ModelState.IsValid)
+            Student student = new()
+            {
+                Student_Number = registerViewM.RegisterVM.StudentNumber,
+                CourseId = registerViewM.RegisterVM.CourseNumber,
+                Title = registerViewM.RegisterVM.Title,
+                Initials = registerViewM.RegisterVM.Initials,
+                Surname = registerViewM.RegisterVM.Surname
+            };
+            bool StudentExists = _unitOfWork.Student.Any(u => u.Student_Number == student.Student_Number);
+            if (ModelState.IsValid && !StudentExists && student.Student_Number.Length==9)
             {
                 ApplicationUser user = new()
                 {
@@ -106,6 +115,9 @@ namespace Student_Card.Controllers
                     CreatedDate = DateTime.Now,
                     Role = registerViewM.Role
                 };
+                _unitOfWork.Student.Add(student);
+                _unitOfWork.Save();
+                TempData["success"] = "The Student has been created successfully.";
                 var result = await _usermanager.CreateAsync(user, registerViewM.RegisterVM.Password);
                 if (result.Succeeded)
                 {
@@ -117,16 +129,6 @@ namespace Student_Card.Controllers
                     {
                         await _usermanager.AddToRoleAsync(user, SD.Role_Student);
                     }
-                    Student student = new()
-                    {
-                        Student_Number = registerViewM.RegisterVM.StudentNumber,
-                        CourseId = registerViewM.RegisterVM.CourseNumber,
-                        Title = registerViewM.RegisterVM.Title,
-                        Initials = registerViewM.RegisterVM.Initials,
-                        Surname = registerViewM.RegisterVM.Surname
-                    };
-                    _unitOfWork.Student.Add(student);
-                    _unitOfWork.Save();
 
                     await _signinManager.SignInAsync(user, isPersistent: false);
                     if (string.IsNullOrEmpty(registerViewM.RegisterVM.RedirectUrl))
@@ -137,6 +139,7 @@ namespace Student_Card.Controllers
                     {
                         return LocalRedirect(registerViewM.RegisterVM.RedirectUrl);
                     }
+
                 }
                 else
                 {

@@ -12,8 +12,8 @@ using Student_Card.Data;
 namespace Student_Card.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20231213151036_NewDatabase")]
-    partial class NewDatabase
+    [Migration("20231214073113_New")]
+    partial class New
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

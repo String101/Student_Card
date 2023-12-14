@@ -14,14 +14,14 @@ namespace Student_Card.Repositories
         public UnitOfWork(SqlDbContext db)
         {
             _db = db;
-            Student= new StudentRepo(db);
-            StudentCard= new StudentCardRepo(db);
-            Course= new CourseRepo(db);
-            User= new ApplicationUserRepo(db);
+            Student= new StudentRepo(_db);
+            StudentCard= new StudentCardRepo(_db);
+            Course= new CourseRepo(_db);
+            User= new ApplicationUserRepo(_db);
         }
         public void Save()
         {
-          _db.SaveChanges();
+            _db.SaveChanges();
         }
     }
 }
