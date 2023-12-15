@@ -1,0 +1,67 @@
+﻿@model StudentCard
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="w-100 card border-0">
+    <div class="card-header bg-info bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="text-white py-2">Student Card List</h1>
+            </div>
+        </div>
+    </div>
+    <div class="card-body border p-4">
+        <div class="row pb-3">
+            <div class="col-6 offset-6 text-end">
+                <a asp-controller="StudentCard" asp-action="Create" class="btn btn-secondary">
+                    <i class="bi bi-plus-circle"></i> Add New Card
+                </a>
+            </div>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Initials</th>
+                    <th>Surname</th>
+                    <th>Student Number</th>
+                    <th>Course</th>
+                    <th>Current Year</th>
+                    <th>Image</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+             @if(Model!=null)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => Model.Student.Title)</td>
+                        <td>@Html.DisplayFor(modelItem => Model.Student.Initials)</td>
+                        <td>@Html.DisplayFor(modelItem => Model.Student.Surname)</td>
+                        <td>@Html.DisplayFor(modelItem => Model.Student.Student_Number)</td>
+                        <td>@Html.DisplayFor(modelItem => Model.Course)</td>
+                        <td>@Html.DisplayFor(modelItem => Model.Year)</td>
+                        <td>
+                            <img src="@Model.ImageUrl" width="150px" height="100px"
+                                 style="border-radius: 5px; border: 1px solid #bbb9b9" />
+                        </td>
+                      
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                     
+                    </tr>
+                }
+
+                
+            </tbody>
+        </table>
+
+
+    </div>

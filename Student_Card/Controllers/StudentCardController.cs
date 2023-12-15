@@ -34,7 +34,8 @@ namespace Student_Card.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Create");
+                    var student = _unitOfWork.StudentCard.Get(u => u.StudentID == objUser.StudentNumber, includeProperties: "Student");
+                    return View("Index2",student);
                 }
             }
             return View();
@@ -50,6 +51,7 @@ namespace Student_Card.Controllers
         {
             ApplicationUser obj = _unitOfWork.User.Get(x => x.UserName == user);
             studentViewModel.StudentCard.StudentID = obj.StudentNumber;
+            var student = _unitOfWork.Student.Get(u => u.Student_Number == obj.StudentNumber, includeProperties: "Course");
             
             bool StudentExists = _unitOfWork.StudentCard.Any(u => u.StudentID == studentViewModel.StudentCard.StudentID);
             if (StudentExists)
@@ -79,6 +81,8 @@ namespace Student_Card.Controllers
                         {
                             studentViewModel.StudentCard.ImageUrl = "https://placehold.co/600x402";
                         }
+                        studentViewModel.StudentCard.Status = SD.StatusPending;
+                        studentViewModel.StudentCard.Course = student.Course.CourseName;
                         _unitOfWork.StudentCard.Add(studentViewModel.StudentCard);
                         _unitOfWork.Save();
                         TempData["success"] = "The Student has been created successfully.";
@@ -110,18 +114,45 @@ namespace Student_Card.Controllers
             return View(studentCard);
         }
         [HttpPost]
-        public IActionResult Delete(StudentCard studentViewModel)
+        public IActionResult Delete(StudentCard studentViewModel,string user)
         {
-            StudentCard objfromDb = _unitOfWork.StudentCard.Get(x => x.Id == studentViewModel.Id);
+            StudentCard objfromDb = _unitOfWork.StudentCard.Get(x => x.Id == studentViewModel.Id,includeProperties:"Student");
             if (objfromDb is not null)
             {
                 _unitOfWork.StudentCard.Remove(objfromDb);
                 _unitOfWork.Save();
                 TempData["success"] = "The Student has been deleted successfully.";
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
             TempData["error"] = "The Student can not be deleted.";
             return View();
         }
+
+
+
+        [HttpGet]
+        public IActionResult Update(string id)
+        {
+            StudentCard objfromDb = _unitOfWork.StudentCard.Get(x => x.StudentID == id,includeProperties:"Student");
+           
+            return View(objfromDb);
+        }
+        
+        [HttpPost]
+        public IActionResult Update(StudentCard studentViewModel, string user)
+        {
+            StudentCard objfromDb = _unitOfWork.StudentCard.Get(x => x.StudentID == studentViewModel.StudentID,includeProperties:"Student");
+            objfromDb.Status = studentViewModel.Status;
+            if (objfromDb is not null)
+            {
+                _unitOfWork.StudentCard.Update(objfromDb);
+                _unitOfWork.Save();
+                TempData["success"] = "The Student has been updated successfully.";
+                return RedirectToAction("Index", "Home");
+            }
+            TempData["error"] = "The Student can not be updated.";
+            return View();
+        }
+
     }
 }

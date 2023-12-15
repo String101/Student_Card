@@ -20,5 +20,8 @@ namespace Student_Card.Models
         public string StudentID { get; set; }
         [ValidateNever]
         public Student Student { get; set; }
+     
+        public string Course { get; set; }
+        public string Status { get; set; } = SD.StatusPending;
     }
 }

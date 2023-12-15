@@ -209,7 +209,8 @@ namespace Student_Card.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Year = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StudentID = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    StudentID = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Course = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

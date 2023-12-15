@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\images\\2019.jpg"
     },
     {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\409175968_764582052361896_656621550355402085_n.jpg",
+      "PackagePath": "staticwebassets\\images\\409175968_764582052361896_656621550355402085_n.jpg"
+    },
+    {
       "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\BHP.JPG",
       "PackagePath": "staticwebassets\\images\\BHP.JPG"
     },
@@ -29,8 +33,44 @@
       "PackagePath": "staticwebassets\\images\\Management.JPG"
     },
     {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\0583e0fb-c156-4aff-9d45-40811c1ff40d.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\0583e0fb-c156-4aff-9d45-40811c1ff40d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\5d0f9c81-83c0-4eac-b8bf-57c247e35b53.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\5d0f9c81-83c0-4eac-b8bf-57c247e35b53.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\615284df-3608-4114-a85e-86e08b783bdc.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\615284df-3608-4114-a85e-86e08b783bdc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\67aa8abb-3de5-4e39-96ad-a9bc70d8ce19.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\67aa8abb-3de5-4e39-96ad-a9bc70d8ce19.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\727f6a3f-b490-4def-9967-c5e65797b607.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\727f6a3f-b490-4def-9967-c5e65797b607.jpg"
+    },
+    {
       "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\78d70998-cc81-4b30-8ada-ffb49e8bf666.jpg",
       "PackagePath": "staticwebassets\\images\\StudentImage\\78d70998-cc81-4b30-8ada-ffb49e8bf666.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\7bf3dfab-e80a-4a8b-8683-2959196d9de6.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\7bf3dfab-e80a-4a8b-8683-2959196d9de6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\7ec5466e-7e86-4981-826e-76c37c229560.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\7ec5466e-7e86-4981-826e-76c37c229560.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\828183be-7ab5-48a7-835a-a8999e64273b.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\828183be-7ab5-48a7-835a-a8999e64273b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\8d9cb193-0c03-467e-8e4c-8dfc0475df6b.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\8d9cb193-0c03-467e-8e4c-8dfc0475df6b.jpg"
     },
     {
       "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\97140cb3-6278-42a5-bb38-23b2005ad998.jpg",
@@ -39,6 +79,22 @@
     {
       "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\a0864ac4-36a5-4cbc-8d49-e5af30298225.jpg",
       "PackagePath": "staticwebassets\\images\\StudentImage\\a0864ac4-36a5-4cbc-8d49-e5af30298225.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\a843c077-49e3-4d04-99d2-d5c59a401942.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\a843c077-49e3-4d04-99d2-d5c59a401942.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\b9f1e414-0825-4e75-be19-ea9248b39ed9.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\b9f1e414-0825-4e75-be19-ea9248b39ed9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\e3ea2803-af01-48dd-aaea-b39d50d985cc.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\e3ea2803-af01-48dd-aaea-b39d50d985cc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\eb9392ad-4f26-49db-8b28-f5ab04ee8887.jpg",
+      "PackagePath": "staticwebassets\\images\\StudentImage\\eb9392ad-4f26-49db-8b28-f5ab04ee8887.jpg"
     },
     {
       "Id": "C:\\Users\\thusi\\Downloads\\Student_Cards\\Student_Card\\Student_Card\\wwwroot\\images\\StudentImage\\f3eb6b22-35c5-492b-9b94-e88f624e3714.jpg",

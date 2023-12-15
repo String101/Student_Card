@@ -6,7 +6,7 @@
     <div class="card-header bg-info bg-gradient m-lg-0 py-3">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="text-white py-2">Student Card</h1>
+                <h1 class="text-white py-2">Delet Student</h1>
             </div>
         </div>
     </div>
@@ -15,15 +15,22 @@
     <form method="post" class="row">
 
         <input asp-for="Id" hidden />
+        <input asp-for="StudentID" hidden />
+        <input asp-for="Student.Student_Number" hidden />
+        <input asp-for="Student.Title" hidden />
+        <input asp-for="Student.Initials" hidden />
+        <input asp-for="Student.Surname" hidden />
+        <input asp-for="Course" hidden />
+        <input asp-for="Year" hidden />
         <div class="col-8">
             <div class="p-3">
 
-                
+              
                 <div class="form-floating py-2 col-10">
                     <input asp-for="@Model.Student.Student_Number" disabled class="form-control border shadow" />
                     <label asp-for="Student.Student_Number" class="ms-2"></label>
                 </div>
-                 <div class="form-floating py-2 col-10">
+                <div class="form-floating py-2 col-10">
                     <input asp-for="@Model.Course" disabled class="form-control border shadow" />
                     <label asp-for="Course" class="ms-2"></label>
                 </div>
@@ -47,27 +54,25 @@
                     <label asp-for="Year" class="ms-2"></label>
                 </div>
                 <div class="form-floating py-2 col-10">
-                    <input asp-for="@Model.Status" disabled class="form-control border shadow" />
+                    <select asp-for="@Model.Status" class="form-select">
+
+                        <option value="@SD.StatusPending">@SD.StatusPending</option>
+                        <option value="@SD.StatuseApproved">@SD.StatuseApproved</option>
+                        <option value="@SD.StatuseRejected">@SD.StatuseRejected</option>
+
+                        <option  selected>@Model.Status</option>
+
+                    </select>
                     <label asp-for="Status" class="ms-2"></label>
                 </div>
 
                 <div class="row pt-2">
                     <div class="col-4 col-md-3">
-                        <button type="submit" class=" btn btn-danger w-100" asp-route-user="@UserManager.GetUserName(User)">
-                            <i class="bi bi-trash-fill"> Delete</i>
+                        <button type="submit" class=" btn btn-success w-100" asp-route-user="@UserManager.GetUserName(User)">
+                            <i class="bi bi-check-circle"> Update</i>
                         </button>
                     </div>
-                    <div class="col-4 col-md-3">
-                        <a asp-controller="StudentCard" asp-route-id="@Model.StudentID" asp-action="Update" class="btn btn-warning w-100">
-                            <i class="bi bi-pencil-square"> Update</i>
-                        </a>
-                    </div>
-                    <div class="col-4 col-md-3">
-                        <a asp-controller="StudentCard" asp-route-user="@UserManager.GetUserName(User)" asp-action="Index" class="btn btn-secondary w-100">
-                            <i class="bi bi-x-circle"> Cancel</i>
-                        </a>
-                    </div>
-                   
+                  
                 </div>
             </div>
         </div>

@@ -90,16 +90,9 @@ namespace Student_Card.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewM registerViewM)
         {
-            Student student = new()
-            {
-                Student_Number = registerViewM.RegisterVM.StudentNumber,
-                CourseId = registerViewM.RegisterVM.CourseNumber,
-                Title = registerViewM.RegisterVM.Title,
-                Initials = registerViewM.RegisterVM.Initials,
-                Surname = registerViewM.RegisterVM.Surname
-            };
-            bool StudentExists = _unitOfWork.Student.Any(u => u.Student_Number == student.Student_Number);
-            if (ModelState.IsValid && !StudentExists && student.Student_Number.Length==9)
+          
+          
+            if (ModelState.IsValid)
             {
                 ApplicationUser user = new()
                 {
@@ -115,9 +108,22 @@ namespace Student_Card.Controllers
                     CreatedDate = DateTime.Now,
                     Role = registerViewM.Role
                 };
-                _unitOfWork.Student.Add(student);
-                _unitOfWork.Save();
-                TempData["success"] = "The Student has been created successfully.";
+                Student student = new()
+                {
+                    Student_Number = registerViewM.RegisterVM.StudentNumber,
+                    CourseId = registerViewM.RegisterVM.CourseNumber,
+                    Title = registerViewM.RegisterVM.Title,
+                    Initials = registerViewM.RegisterVM.Initials,
+                    Surname = registerViewM.RegisterVM.Surname
+                };
+                bool StudentExists = _unitOfWork.Student.Any(u => u.Student_Number == student.Student_Number);
+                if(!StudentExists&& student.Student_Number.Length==9)
+                {
+                    _unitOfWork.Student.Add(student);
+                    _unitOfWork.Save();
+                    TempData["success"] = "The Student has been created successfully.";
+                }
+               
                 var result = await _usermanager.CreateAsync(user, registerViewM.RegisterVM.Password);
                 if (result.Succeeded)
                 {

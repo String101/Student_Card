@@ -31,8 +31,7 @@
                         </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
-                            var claimsIdentity = (ClaimsIdentity)User.Identity;
-                            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+                            
 
                           
                             <li class="nav-item dropdown">
@@ -40,15 +39,25 @@
                                     Content Management
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li>
-                                        <a class="dropdown-item text-dark" asp-area="" asp-controller="Student" asp-action="Index">Students</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item text-dark" asp-area="" asp-controller="Course" asp-action="Index">Courses</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item text-dark" asp-area="" asp-route-user="@UserManager.GetUserName(User)" asp-controller="StudentCard" asp-action="Index">Student Card</a>
-                                    </li>
+                                    @if(User.IsInRole(SD.Role_Admin))
+                                    {
+                                        <li>
+                                            <a class="dropdown-item text-dark" asp-area="" asp-controller="Student" asp-action="Index">Students</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item text-dark" asp-area="" asp-controller="Course" asp-action="Index">Courses</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item text-dark" asp-area="" asp-route-user="@UserManager.GetUserName(User)" asp-controller="StudentCard" asp-action="Index">Student Card</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <a class="dropdown-item text-dark" asp-area="" asp-route-user="@UserManager.GetUserName(User)" asp-controller="StudentCard" asp-action="Index">Student Card</a>
+                                        </li>
+                                    }
+
                                 </ul>
                             </li>
                         }

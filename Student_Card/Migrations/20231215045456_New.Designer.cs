@@ -12,7 +12,7 @@ using Student_Card.Data;
 namespace Student_Card.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20231214073113_New")]
+    [Migration("20231215045456_New")]
     partial class New
     {
         /// <inheritdoc />
@@ -395,6 +395,9 @@ namespace Student_Card.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Course")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");

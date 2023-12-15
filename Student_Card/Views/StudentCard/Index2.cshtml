@@ -1,0 +1,109 @@
+﻿@model StudentCard
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="w-100 card border-0">
+    <div class="card-header bg-info bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="text-white py-2">Your Student Card</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card-body border-4">
+    <form method="post" class="row">
+
+        <input asp-for="Id" hidden />
+        <input asp-for="StudentID" hidden />
+        <input asp-for="Student.Student_Number" hidden />
+        <input asp-for="Student.Title" hidden />
+        <input asp-for="Student.Initials" hidden />
+        <input asp-for="Student.Surname" hidden />
+        <input asp-for="Course" hidden />
+        <input asp-for="Year" hidden />
+        @if(Model!=null)
+        {
+            <div class="col-8">
+                <div class="p-3">
+
+                
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.Student.Student_Number" disabled class="form-control border shadow" />
+                        <label asp-for="Student.Student_Number" class="ms-2"></label>
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.Course" disabled class="form-control border shadow" />
+                        <label asp-for="Course" class="ms-2"></label>
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.Student.Title" disabled class="form-control border shadow" />
+                        <label asp-for="Student.Title" class="ms-2"></label>
+
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.Student.Initials" disabled class="form-control border shadow" />
+                        <label asp-for="Student.Initials" class="ms-2"></label>
+
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.Student.Surname" disabled class="form-control border shadow" />
+                        <label asp-for="Student.Surname" class="ms-2"></label>
+
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.Year" disabled class="form-control border shadow" />
+                        <label asp-for="Year" class="ms-2"></label>
+
+                    </div>
+                    <div class="form-floating py-2 col-10">
+                        <input asp-for="@Model.Status" disabled class="form-control border shadow" />
+                        <label  class="ms-2">Status</label>
+
+                    </div>
+
+                    <div class="row pt-2">
+                        <div class="col-6 col-md-3">
+                            <button type="submit" class=" btn btn-danger w-100" asp-route-studentViewModel="@Model" asp-action="Delete">
+                                <i class="bi bi-trash-fill"> Delete</i>
+                            </button>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a asp-controller="StudentCard" asp-route-user="@UserManager.GetUserName(User)" asp-action="Index" class="btn btn-secondary w-100">
+                                <i class="bi bi-x-circle"> Cancel</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-floating py-2 col-4">
+                    <img src="@Model.ImageUrl" width="300px" height="200px"
+                         style="border-radius:5px; border:1px solid #bbb9b9" />
+
+
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row pb-3">
+                <div class=" text-start">
+                    <a asp-controller="StudentCard" asp-action="Create" class="btn btn-secondary">
+                        <i class="bi bi-plus-circle"></i> Add New Card
+                    </a>
+                </div>
+            </div>
+        }
+  
+       
+
+    </form>
+
+</div>
+
+@* @section Scripts{
+    @{
+        <partial name="_ValidationScripsPartial" />
+    }
+} *@
