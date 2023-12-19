@@ -40,6 +40,7 @@ namespace Student_Card.Controllers
             }
             return View();
         }
+
         public IActionResult Create(string user)
         {
 
@@ -114,7 +115,7 @@ namespace Student_Card.Controllers
             return View(studentCard);
         }
         [HttpPost]
-        public IActionResult Delete(StudentCard studentViewModel,string user)
+        public IActionResult Delete(StudentCard studentViewModel)
         {
             StudentCard objfromDb = _unitOfWork.StudentCard.Get(x => x.Id == studentViewModel.Id,includeProperties:"Student");
             if (objfromDb is not null)
@@ -139,7 +140,7 @@ namespace Student_Card.Controllers
         }
         
         [HttpPost]
-        public IActionResult Update(StudentCard studentViewModel, string user)
+        public IActionResult Update(StudentCard studentViewModel)
         {
             StudentCard objfromDb = _unitOfWork.StudentCard.Get(x => x.StudentID == studentViewModel.StudentID,includeProperties:"Student");
             objfromDb.Status = studentViewModel.Status;

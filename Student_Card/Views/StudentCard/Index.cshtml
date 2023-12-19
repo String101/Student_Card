@@ -52,8 +52,8 @@
                             </td>
                             <td>@Html.DisplayFor(modelItem => item.Status)</td>
                             <td>
-                                <a class="btn btn-success" asp-action="" asp-route-id="@item.Id"><i class="bi bi-check-circle"> Accept</i></a>
-                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"> <i class="bi bi-x-circle"> Reject</i></a>
+                                <a class="btn btn-primary" asp-action="" asp-route-id="@item.Id"><i class="bi bi-check-circle"> Print</i></a>
+                            <a class="btn btn-success" asp-action="Delete" asp-route-id="@item.Id"> <i class="bi bi-pencil-square"> Update</i></a>
 
                             </td>
                         </tr>

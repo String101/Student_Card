@@ -6,7 +6,7 @@ namespace Student_Card.Models
 {
     public class StudentCard
     {
-        [Key,]
+        [Key]
         public int Id { get; set; }
         [ValidateNever]
         public int Year { get; set; } = DateTime.Now.Year;

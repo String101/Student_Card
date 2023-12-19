@@ -210,7 +210,8 @@ namespace Student_Card.Migrations
                     Year = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StudentID = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    Course = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Course = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -237,16 +238,6 @@ namespace Student_Card.Migrations
                     { 8, "DP_ELE", "The world is increasingly becoming a global village, with Information and Communication Technologies (ICTs) playing a fundamental role in our day-to-day lives. South Africa, like other countries, realises that ICTs can indeed bring about positive change in its socio-economic development. CUT’s contribution to this national agenda is realised through diploma, BTech and MTech programmes offered in the Department of IT. Through these programmes, the university contributes to the ever-increasing demand for a wide range of highly skilled information technology professionals in fields such as web applications, communication networks and software development. The department is particularly unique in the country, as it offers courses in mobile programming and games development. The department has state-of-the-art Cisco equipment through which students get hands-on experience in computer networking, which provides opportunities for various professional certification pathways.", "Engineering Technology in Electrical Engineering" },
                     { 9, "DP_AGM", "The world is increasingly becoming a global village, with Information and Communication Technologies (ICTs) playing a fundamental role in our day-to-day lives. South Africa, like other countries, realises that ICTs can indeed bring about positive change in its socio-economic development. CUT’s contribution to this national agenda is realised through diploma, BTech and MTech programmes offered in the Department of IT. Through these programmes, the university contributes to the ever-increasing demand for a wide range of highly skilled information technology professionals in fields such as web applications, communication networks and software development. The department is particularly unique in the country, as it offers courses in mobile programming and games development. The department has state-of-the-art Cisco equipment through which students get hands-on experience in computer networking, which provides opportunities for various professional certification pathways.", "Diploma Agricultural Management" },
                     { 10, "AD_HMN", "The world is increasingly becoming a global village, with Information and Communication Technologies (ICTs) playing a fundamental role in our day-to-day lives. South Africa, like other countries, realises that ICTs can indeed bring about positive change in its socio-economic development. CUT’s contribution to this national agenda is realised through diploma, BTech and MTech programmes offered in the Department of IT. Through these programmes, the university contributes to the ever-increasing demand for a wide range of highly skilled information technology professionals in fields such as web applications, communication networks and software development. The department is particularly unique in the country, as it offers courses in mobile programming and games development. The department has state-of-the-art Cisco equipment through which students get hands-on experience in computer networking, which provides opportunities for various professional certification pathways.", "Advanced Diploma Health Management" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Students",
-                columns: new[] { "Student_Number", "CourseId", "Initials", "Surname", "Title" },
-                values: new object[,]
-                {
-                    { "221032547", 2, "A", "Mavundla", "Ms" },
-                    { "221056854", 1, "S", "Thusi", "Mrs" },
-                    { "222102541", 1, "S", "Sithole", "Mr" }
                 });
 
             migrationBuilder.CreateIndex(

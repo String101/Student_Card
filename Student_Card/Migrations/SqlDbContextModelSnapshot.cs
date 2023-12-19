@@ -357,32 +357,6 @@ namespace Student_Card.Migrations
                     b.HasIndex("CourseId");
 
                     b.ToTable("Students");
-
-                    b.HasData(
-                        new
-                        {
-                            Student_Number = "222102541",
-                            CourseId = 1,
-                            Initials = "S",
-                            Surname = "Sithole",
-                            Title = "Mr"
-                        },
-                        new
-                        {
-                            Student_Number = "221032547",
-                            CourseId = 2,
-                            Initials = "A",
-                            Surname = "Mavundla",
-                            Title = "Ms"
-                        },
-                        new
-                        {
-                            Student_Number = "221056854",
-                            CourseId = 1,
-                            Initials = "S",
-                            Surname = "Thusi",
-                            Title = "Mrs"
-                        });
                 });
 
             modelBuilder.Entity("Student_Card.Models.StudentCard", b =>

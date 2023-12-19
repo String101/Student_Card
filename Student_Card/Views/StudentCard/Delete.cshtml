@@ -15,6 +15,8 @@
     <form method="post" class="row">
 
         <input asp-for="Id" hidden />
+        <input asp-for="StudentID" hidden />
+        <input asp-for="Status" hidden />
         <div class="col-8">
             <div class="p-3">
 
@@ -58,15 +60,11 @@
                         </button>
                     </div>
                     <div class="col-4 col-md-3">
-                        <a asp-controller="StudentCard" asp-route-id="@Model.StudentID" asp-action="Update" class="btn btn-warning w-100">
+                        <a asp-controller="StudentCard"  asp-action="Update" asp-route-id="@Model.StudentID" class="btn btn-primary w-100">
                             <i class="bi bi-pencil-square"> Update</i>
                         </a>
                     </div>
-                    <div class="col-4 col-md-3">
-                        <a asp-controller="StudentCard" asp-route-user="@UserManager.GetUserName(User)" asp-action="Index" class="btn btn-secondary w-100">
-                            <i class="bi bi-x-circle"> Cancel</i>
-                        </a>
-                    </div>
+                 
                    
                 </div>
             </div>

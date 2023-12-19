@@ -119,33 +119,33 @@ namespace Student_Card.Data
                           " various professional certification pathways."
                     }
             );
-            modelBuilder.Entity<Student>().HasData
-                (
-                new Student
-                {
-                    CourseId = 1,
-                    Student_Number = "222102541",
-                    Title = "Mr",
-                    Initials = "S",
-                    Surname = "Sithole"
-                },
-                new Student
-                {
-                    CourseId = 2,
-                    Student_Number = "221032547",
-                    Title = "Ms",
-                    Initials = "A",
-                    Surname = "Mavundla"
-                },
-                new Student
-                {
-                    CourseId = 1,
-                    Student_Number = "221056854",
-                    Title = "Mrs",
-                    Initials = "S",
-                    Surname = "Thusi"
-                }
-                );
+            //modelBuilder.Entity<Student>().HasData
+            //    (
+            //    new Student
+            //    {
+            //        CourseId = 1,
+            //        Student_Number = "222102541",
+            //        Title = "Mr",
+            //        Initials = "S",
+            //        Surname = "Sithole"
+            //    },
+            //    new Student
+            //    {
+            //        CourseId = 2,
+            //        Student_Number = "221032547",
+            //        Title = "Ms",
+            //        Initials = "A",
+            //        Surname = "Mavundla"
+            //    },
+            //    new Student
+            //    {
+            //        CourseId = 1,
+            //        Student_Number = "221056854",
+            //        Title = "Mrs",
+            //        Initials = "S",
+            //        Surname = "Thusi"
+            //    }
+            //    );
             //modelBuilder.Entity<StudentCard>().HasData(
 
             //     new StudentCard

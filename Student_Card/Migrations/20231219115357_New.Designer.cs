@@ -12,7 +12,7 @@ using Student_Card.Data;
 namespace Student_Card.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20231215045456_New")]
+    [Migration("20231219115357_New")]
     partial class New
     {
         /// <inheritdoc />
@@ -360,32 +360,6 @@ namespace Student_Card.Migrations
                     b.HasIndex("CourseId");
 
                     b.ToTable("Students");
-
-                    b.HasData(
-                        new
-                        {
-                            Student_Number = "222102541",
-                            CourseId = 1,
-                            Initials = "S",
-                            Surname = "Sithole",
-                            Title = "Mr"
-                        },
-                        new
-                        {
-                            Student_Number = "221032547",
-                            CourseId = 2,
-                            Initials = "A",
-                            Surname = "Mavundla",
-                            Title = "Ms"
-                        },
-                        new
-                        {
-                            Student_Number = "221056854",
-                            CourseId = 1,
-                            Initials = "S",
-                            Surname = "Thusi",
-                            Title = "Mrs"
-                        });
                 });
 
             modelBuilder.Entity("Student_Card.Models.StudentCard", b =>
@@ -400,6 +374,9 @@ namespace Student_Card.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StudentID")
